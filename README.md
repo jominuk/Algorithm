@@ -23,7 +23,7 @@
 
 | 날짜  | 단계 | 소요시간 | 나만의 난의도 |                풀이 과정                  |문제 수 |
 |------ | ---  |    ---  |      ---     |                   ---                    |   ---  |  
-| 08.07 | 0단계 |  17분   |  7점        | [바로가기](https://minuk22.tistory.com/47)| 1문제 |
-| 08.08 | 0단계 |  13분   |  8점        | [바로가기]([https://minuk22.tistory.com/48](https://velog.io/@jominuk1025/08.08-%EB%A8%B8%EC%93%B1%EC%9D%B4%EB%B3%B4%EB%8B%A4-%ED%82%A4-%ED%81%B0-%EC%82%AC%EB%9E%8C))| 1문제 |
-| 08.09 | 0단계 |  3분   |  10점        | [바로가기]([https://minuk22.tistory.com/49](https://velog.io/@jominuk1025/08.09-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9%EC%B0%A8%EA%B3%B1-3%EB%AC%B8%EC%A0%9C))| 3문제 |
-| 08.10 | 0단계 |  5분   |  9점        | [바로가기](https://velog.io/@jominuk1025/08.10-3%EB%AC%B8%EC%A0%9C)| 3문제 |
+| 08.07 | 0단계 |  17분   |  7점        | [바로가기](https://minuk22.tistory.com/47){: target="_blank"}| 1문제 |
+| 08.08 | 0단계 |  13분   |  8점        | [바로가기]([https://minuk22.tistory.com/48](https://velog.io/@jominuk1025/08.08-%EB%A8%B8%EC%93%B1%EC%9D%B4%EB%B3%B4%EB%8B%A4-%ED%82%A4-%ED%81%B0-%EC%82%AC%EB%9E%8C)){: target="_blank"}| 1문제 |
+| 08.09 | 0단계 |  3분   |  10점        | [바로가기]([https://minuk22.tistory.com/49](https://velog.io/@jominuk1025/08.09-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9%EC%B0%A8%EA%B3%B1-3%EB%AC%B8%EC%A0%9C)){: target="_blank"}| 3문제 |
+| 08.10 | 0단계 |  5분   |  9점        | [바로가기](https://velog.io/@jominuk1025/08.10-3%EB%AC%B8%EC%A0%9C){: target="_blank"}| 3문제 |
