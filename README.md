@@ -28,7 +28,4 @@
 | 08.09 | 0단계 |  3분   |  10점        | [바로가기](https://velog.io/@jominuk1025/08.09-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9%EC%B0%A8%EA%B3%B1-3%EB%AC%B8%EC%A0%9C){: target="_blank"}| 3문제 |
 | 08.10 | 0단계 |  5분   |  9점        | [바로가기](https://velog.io/@jominuk1025/08.10-3%EB%AC%B8%EC%A0%9C){: target="_blank"}| 3문제 |
 
-<a href="https://www.google.com/" target="_blank">새 탭에서 열기</a>
-([새 탭에서 열기](https://www.google.com/){:target="_blank"})
-
 [링크이름](https://www.google.co.kr/){:target="_blank"}
