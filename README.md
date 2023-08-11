@@ -30,3 +30,5 @@
 
 <a href="https://www.google.com/" target="_blank">새 탭에서 열기</a>
 ([새 탭에서 열기](https://www.google.com/){:target="_blank"})
+
+[링크이름](https://www.google.co.kr/){:target="_blank"}
