@@ -1,0 +1,23 @@
+### 문자열 섞기
+문제 설명
+- 길이가 같은 두 문자열 str1과 str2가 주어집니다.
+- 두 문자열의 각 문자가 앞에서부터 서로 번갈아가면서 한 번씩 등장하는 문자열을 만들어 return 하는 solution 함수를 완성해 주세요.
+
+입출력
+
+|str1	| str2	| result |
+|-----|---| ------    |
+|"aaaaa"	|"bbbbb"|	"ababababab"|
+
+```javascript
+function solution(str1, str2) {
+    var answer = '';
+    for(let i=0; i<str1.length; i++){
+        answer += str1[i]+str2[i]
+        // 다음과 같이 작성했을 때 str1의 0번째 인덱스와 str2의 0번째 인덱스가
+        // 문자열 연결 연산자를 통해 answer에 넣게 되면 ab이렇게 넣어지게 된다.
+        // 이게 str1의 길이만큼 반복하게 된다.
+    }
+    return answer;
+}
+```
