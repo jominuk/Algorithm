@@ -129,6 +129,162 @@ function solution(a, d, included) {
 }
 ```
 
+<br/>
+
+## 이어 붙인 수 (forEach, 전개연산자 사)
+
+- 문제 설명
+  - 정수가 담긴 리스트 num_list가 주어집니다. num_list의 홀수만 순서대로 이어 붙인 수와 짝수만 순서대로 이어 붙인 수의 합을 return하도록 solution 함수를 완성해주세요.
+
+입출력 예
+|num_list|	result|
+|-|-|
+|[3, 4, 5, 2, 1]	|393|
+|[5, 7, 8, 3]	|581|
+
+```jsx
+function solution(num) {
+    let odd = [];
+    let eve = [];
+    
+    [...num].forEach((e) => {
+        if(e % 2 !== 0){
+            odd.push(e)
+        }else{
+            eve.push(e)
+        }
+    })
+    let ood = parseInt([...odd].join(""))
+    let eev = parseInt([...eve].join(""))
+    
+    return ood + eev;
+}
+```
+
+<br />
+
+## 마지막 두 원소(전개연산자)
+
+- 문제 설명
+  - 정수 리스트 num_list가 주어질 때, 마지막 원소가 그전 원소보다 크면 마지막 원소에서 그전 원소를 뺀 값을 마지막 원소가 그전 원소보다 크지 않다면 마지막 원소를 두 배한 값을 추가하여 return하도록 solution 함수를 완성해주세요.
+
+입출력 예
+|num_list|	result|
+|-|-|
+|[2, 1, 6]	|[2, 1, 6, 5]|
+|[5, 2, 1, 7, 5]	|[5, 2, 1, 7, 5, 10]|
+
+```jsx
+function solution(num_list) {
+    var answer = [...num_list];
+    let last = num_list[num_list.length-1];
+    let last1 = num_list[num_list.length-2];
+    
+    if(last > last1) {
+        answer.push(last - last1)
+    }else {
+        answer.push(last * 2)
+    }
+    return answer;
+}
+```
+
+<br />
+
+## 수 조작하기 1
+- 문제 설명
+  - 정수 n과 문자열 control이 주어집니다. control은 "w", "a", "s", "d"의 4개의 문자로 이루어져 있으며, control의 앞에서부터 순서대로 문자에 따라 n의 값을 바꿉니다.
+"w" : n이 1 커집니다.
+"s" : n이 1 작아집니다.
+"d" : n이 10 커집니다.
+"a" : n이 10 작아집니다.
+  - 위 규칙에 따라 n을 바꿨을 때 가장 마지막에 나오는 n의 값을 return 하는 solution 함수를 완성해 주세요.
+
+입출력 예
+|n|	control|	result|
+|-|-|-|
+|0|	"wsdawsdassw"	|-1|
+
+```jsx
+function solution(n, control) {
+    var answer = 0;
+    for(let i=0; i<control.length; i++) {
+        if(control[i] === "w"){
+            answer = n + 1
+        }else if(control[i] === "s"){
+            answer = n - 1
+        }else if(control[i] === "d"){
+            answer = n + 10
+        }else{
+            answer = n - 10
+        }
+    }
+    return answer;
+}
+
+// 위 코드는 잘못된 예제 한번 잘 찾아보고 아래 코드를 확인해볼 것 !
+
+
+function solution(n, control) {
+    var answer = n;
+    for(let i=0; i<control.length; i++) {
+        if(control[i] === "w"){
+            answer += 1
+        }else if(control[i] === "s"){
+            answer -= 1
+        }else if(control[i] === "d"){
+            answer += 10
+        }else{
+            answer -= 10
+        }
+    }
+    return answer;
+}
+```
+https://school.programmers.co.kr/learn/courses/30/lessons/181926
+
+
+<br/>
+
+## 수 조작하기2( 다시 연습해 )
+
+- 문제 설명
+  - 정수 배열 numLog가 주어집니다. 처음에 numLog[0]에서 부터 시작해 "w", "a", "s", "d"로 이루어진 문자열을 입력으로 받아 순서대로 다음과 같은 조작을 했다고 합시다.
+"w" : 수에 1을 더한다.
+"s" : 수에 1을 뺀다.
+"d" : 수에 10을 더한다.
+"a" : 수에 10을 뺀다.
+  - 그리고 매번 조작을 할 때마다 결괏값을 기록한 정수 배열이 numLog입니다. 즉, numLog[i]는 numLog[0]로부터 총 i번의 조작을 가한 결과가 저장되어 있습니다.
+  - 주어진 정수 배열 numLog에 대해 조작을 위해 입력받은 문자열을 return 하는 solution 함수를 완성해 주세요.
+
+입출력 예
+|numLog	|result|
+|-|-|
+|[0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]	|"wsdawsdassw"|
+
+```jsx
+function solution(numLog) {
+    var answer = '';
+
+    for (let i = 1; i < numLog.length; i++) {
+        const diff = numLog[i] - numLog[i - 1];
+
+        if (diff === 1) {
+            answer += "w";
+        } else if (diff === -1) {
+            answer += "s";
+        } else if (diff === 10) {
+            answer += "d";
+        } else if (diff === -10) {
+            answer += "a";
+        }
+    }
+
+    return answer;
+}
+// 풀이과정을 이해 못함
+```
+https://school.programmers.co.kr/learn/courses/30/lessons/181925
 
 
 
