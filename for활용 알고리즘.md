@@ -286,14 +286,52 @@ function solution(numLog) {
 ```
 https://school.programmers.co.kr/learn/courses/30/lessons/181925
 
+<br/>
+
+## 수열과 구간 쿼리 3(구조분해할당, forEach, 대입연산 )
+
+- 문제 설명
+  - 정수 배열 arr와 2차원 정수 배열 queries이 주어집니다. queries의 원소는 각각 하나의 query를 나타내며, [i, j] 꼴입니다.
+  - 각 query마다 순서대로 arr[i]의 값과 arr[j]의 값을 서로 바꿉니다.
+  - 위 규칙에 따라 queries를 처리한 이후의 arr를 return 하는 solution 함수를 완성해 주세요.
+
+입출력 예
+|arr	|queries	|result|
+|-|-|-|
+|[0, 1, 2, 3, 4]|	[[0, 3],[1, 2],[1, 4]]	|[3, 4, 1, 0, 2]|
+
+```jsx
+function solution(arr, queries) {
+    var answer = [...arr];
+    
+    for(let i=0; i<queries.length; i++){
+        const [a,b] = queries[i]
+        
+        let temp = answer[a]
+        //for문의 0번째 인덱스인 [0,3]을 시작으로 
+        // a인 0을 answer에 0번째 인덱스인 0의 값을 temp에 넣어둔다.
+        answer[a] = answer[b]
+        // 그리고 0번째 인덱스의 [0,3] 중 3을 answer에 3번째 인덱스인 
+        // 3을 answer의 a번째 인덱스였던 0번째 인덱스에 3의 값을 넣는다.
+        answer[b] = temp
+        // 그리고 answer[b]인 3번째 인덱스자리에 변수를 저장해둔 0의 값을 넣어둔다.
+    }
+    return answer;
+}
+// ======================================================================================
+
+function solution(arr, queries) {
+    queries.forEach( ([a,b]) => {
+        //구조 분해 할당을 활용해서 각각의 요소에 함수를 지정해준다.
+        [arr[a],arr[b]] = [arr[b],arr[a]];
+        // ' = ' 대입연산자를 통해 a자리와 b자리에 
+        // b를 넣고 a를 넣어준다.
+    })
+    return arr;
+}
 
 
-
-
-
-
-
-
+```
 
 
 
