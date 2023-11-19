@@ -361,15 +361,51 @@ function solution(arr, queries) {
 }
 ```
 
+<br/>
 
+## 수열과 구간 쿼리4 (reduce 활용 )
 
+- 문제 설명
+  - 정수 배열 arr와 2차원 정수 배열 queries이 주어집니다. queries의 원소는 각각 하나의 query를 나타내며, [s, e, k] 꼴입니다.
+  - 각 query마다 순서대로 s ≤ i ≤ e인 모든 i에 대해 i가 k의 배수이면 arr[i]에 1을 더합니다.
+  - 위 규칙에 따라 queries를 처리한 이후의 arr를 return 하는 solution 함수를 완성해 주세요.
 
+입출력 예
+|arr|	queries	|result|
+|-|-|-|
+|[0, 1, 2, 4, 3]|	[[0, 4, 1],[0, 3, 2],[0, 3, 3]]|	[3, 2, 4, 6, 4]|
 
+```jsx
+function solution(arr, queries) {    
+    for(let i=0; i<queries.length; i++) {
+        const [s,e,k] = queries[i];
+// 이전 문제들과 다른점이라면 기존에 배열을 자르는게 아닌 조건에 맞는 인덱스 애들만 더해준다.
+        for(let j=s; j<=e; j++){
+            if(j % k === 0){
+                arr[j] += 1
+            }
+        }
+    }
+    return arr;
+}
 
-
-
-
-
+// ===========================================
+function solution(arr, queries) {
+    return queries.reduce((bucket, [s,e,k]) => {
+// 2. 초기값으로 사용한 배열은 bucket이라는 이름으로 콜백 함수 내부에서 사용하게 된다.
+// 3. 첫번 째 매개변수에는 bucket이며, 현재까지의 결과를 나타낸다.
+// 4. 두번 째 매개변수에는 비구조화 할당을 사용해서 순회중인 queires의[s,e,k]의 요소를 나타낸다.
+// 5. 이제 for문을 통한 조건식을 만들어 조건에 맞는 값들은 buvket에 +1씩 해준다 즉 ...arr의 복사해둔 배열에 조건에 맞는 인덱스의 값을 +1 해준다.
+        for(let i=s; i<=e; i++){
+            if(i % k === 0){
+                bucket[i] += 1
+            }
+        }
+        return bucket
+// 1. reduce함수의 초기값을 전개 연산자를 사용해서 배열을 복사해준다.
+    }, [...arr])
+}
+```
 
 
 
