@@ -407,5 +407,70 @@ function solution(arr, queries) {
 }
 ```
 
+<br/>
+
+## 배열만들기 4
+
+- 문제 설명
+  - 정수 배열 arr가 주어집니다. arr를 이용해 새로운 배열 stk를 만드려고 합니다.
+  - 변수 i를 만들어 초기값을 0으로 설정한 후 i가 arr의 길이보다 작으면 다음 작업을 반복합니다.
+  - 만약 stk가 빈 배열이라면 arr[i]를 stk에 추가하고 i에 1을 더합니다.
+  - stk에 원소가 있고, stk의 마지막 원소가 arr[i]보다 작으면 arr[i]를 stk의 뒤에 추가하고 i에 1을 더합니다.
+  - stk에 원소가 있는데 stk의 마지막 원소가 arr[i]보다 크거나 같으면 stk의 마지막 원소를 stk에서 제거합니다.
+  - 위 작업을 마친 후 만들어진 stk를 return 하는 solution 함수를 완성해 주세요.
+
+입출력 예
+|arr	|result|
+|-|-|
+|[1, 4, 2, 5, 3]|	[1, 2, 3]|
+
+```jsx
+function solution(arr) {
+    var stk = [];
+    for(let i=0; i<arr.length; i++){
+        if(stk.length === 0){
+            stk.push(arr[i])
+        }else if(stk[stk.length-1] < arr[i]){
+            stk.push(arr[i])
+        }else if(stk[stk.length-1] >= arr[i]){
+            stk.pop()
+             i--
+// 여기서 i--을 사용한 이유는 마지막 요소를 pop를 통해 제거하고 인덱스를 다시 전에 있는 값으로 루프를 돌리기 위함
+// 그래서 만약 3번째의 인덱스가 pop조건에 맞는다면 4번째로 늘리지않고 3번째 조건문을 재 평가하게 만드는 사용 법이다.
+        }
+    }
+    return stk;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
