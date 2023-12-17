@@ -446,7 +446,7 @@ function solution(arr) {
 
 <br/>
 
-## 배열 조각하기 
+## 배열 조각하기 (forEach)
 
 - 문제 설명
   - 정수 배열 arr와 query가 주어집니다.
