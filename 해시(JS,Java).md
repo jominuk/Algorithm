@@ -107,6 +107,32 @@ function solution(nums) {
     const maxSelect = nums.length / 2; // 선택할 수 있는 최대 폰켓몬 수
     return Math.min(pokemonTypes.size, maxSelect); // 가능한 폰켓몬 종류의 최댓값과 선택할 수 있는 최대 개수 중 더 작은 값을 반환
 }
+
+
+// ---- Java
+import java.util.HashSet;
+import java.util.Set;
+
+public class Solution {
+
+    // 포켓몬 문제를 해결하는 주요 메소드
+    public int solution(int[] nums) {
+        // 고유한 포켓몬 종류를 저장하는 HashSet을 생성합니다.
+        Set<Integer> 포켓몬종류 = new HashSet<>();
+
+        // 입력 배열을 반복하며 각 요소를 HashSet에 추가합니다.
+        for (int num : nums) {
+            포켓몬종류.add(num);
+        }
+
+        // 선택할 수 있는 최대 포켓몬 수를 계산합니다.
+        int 최대선택수 = nums.length / 2;
+
+        // 고유한 포켓몬 종류 수와 최대 선택 가능한 포켓몬 수 중 작은 값을 반환합니다.
+        return Math.min(포켓몬종류.size(), 최대선택수);
+    }
+}
+
 ```
 
 https://school.programmers.co.kr/learn/courses/30/lessons/1845
